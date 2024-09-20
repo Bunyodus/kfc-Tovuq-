@@ -21,5 +21,5 @@ class AdminPanel(QMainWindow):
 
     def update_orders(self):
         orders = data.get_orders()
-        orders_text = "\n".join([f"Заказ {order[0]}: {order[1]}, количество: {order[2]}, сумма: {order[3]} UZS, адрес: {order[4]}" for order in orders])
+        orders_text = "\n".join([f"Zakaz {order[0]}: {order[1]}, hajmi: {order[2]}, narx: {order[3]} UZS, adres: {order[4]}" for order in orders])
         self.orders_label.setText(orders_text)

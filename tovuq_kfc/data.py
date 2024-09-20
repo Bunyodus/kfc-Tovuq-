@@ -21,11 +21,11 @@ def create_table():
         item_name VARCHAR(255) NOT NULL,
         quantity INT NOT NULL,
         total_price INT NOT NULL,
-        address VARCHAR(255) NOT NULL
+        address VARCHAR(255) 
     )
     """)
     conn.commit()
-    conn.close()
+   
 
 def add_order(item_name, quantity, total_price, address):
     """Add a new order to the database."""
@@ -41,10 +41,12 @@ def add_order(item_name, quantity, total_price, address):
     conn.close()
 
 def get_orders():
-    """Retrieve all orders from the database."""
     conn = create_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM orders")
     orders = cursor.fetchall()
     conn.close()
     return orders
+
+
+# create_table()
